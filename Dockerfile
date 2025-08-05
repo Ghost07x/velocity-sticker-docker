@@ -1,13 +1,13 @@
-FROM mcr.microsoft.com/playwright:v1.43.0-jammy
+FROM mcr.microsoft.com/playwright:v1.54.2-jammy
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
-
+# Copy everything in
 COPY . .
 
+# Start server
 CMD ["node", "server.js"]
+
 
 
 
