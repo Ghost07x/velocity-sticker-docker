@@ -2,9 +2,9 @@ FROM mcr.microsoft.com/playwright:v1.43.0-jammy
 
 WORKDIR /app
 
-COPY package.json .
-RUN npm install
-
+# Copy everything into the container
 COPY . .
 
-CMD ["npm", "start"]
+# Start the Express server
+CMD ["node", "server.js"]
+
